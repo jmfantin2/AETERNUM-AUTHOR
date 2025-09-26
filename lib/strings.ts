@@ -22,6 +22,6 @@ const records = {
     'Confira a minha lista de componentes abaixo!',
     'Check out my list of components below!',
   ],
-  LISTA_DE_EXEMPLOS: ['menu de exemplos', 'examples menu'],
+  LISTA_DE_EXEMPLOS: ['menu de exemplos', 'slides menu'],
   FRONTEND_IS_ART: ['frontend é arte.', 'frontend is art.'],
 };

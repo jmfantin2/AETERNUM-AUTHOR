@@ -1,17 +1,17 @@
 //! Æternum Author
-//? @/components/ExamplesMenu.tsx
+//? @/components/SlidesMenu.tsx
 import TXT from '@/lib/strings';
 import { SpinningTriangle } from './SpinningTriangle';
 import { useState, useEffect } from 'react';
 import { IoMdArrowDropup } from 'react-icons/io';
 import shapeshifter from 'classnames';
-import { useExample } from '@/contexts/ExampleContext';
+import { useSlide } from '@/contexts/SlideContext';
 
-export function ExamplesMenu() {
+export function SlidesMenu() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []); //only runs in the client = indicates it has mounted
   //! these are needed for server-side verification
-  const { example, setExample } = useExample();
+  const { slide, setSlide } = useSlide();
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -60,16 +60,15 @@ export function ExamplesMenu() {
               <div
                 key={option.id}
                 className="py-2 w-full text-center rotate-180 md:rotate-0"
-                onClick={() => setExample(option.title)}
+                onClick={() => setSlide(option.title)}
               >
                 <p
                   className={shapeshifter(
                     'border-b-2 border-ROSE/40 dark:border-EMERALD/40 font-burtons text-xl',
                     {
                       'bg-ORANGE/20 dark:bg-CYAN/20 hover:text-ROSE dark:hover:text-EMERALD hover:bg-whirl_light dark:hover:bg-whirl_dark cursor-pointer':
-                        option.title !== example,
-                      'bg-MIDDLE/30 dark:bg-MIDDLE/30':
-                        option.title === example,
+                        option.title !== slide,
+                      'bg-MIDDLE/30 dark:bg-MIDDLE/30': option.title === slide,
                     }
                   )}
                 >
@@ -78,7 +77,7 @@ export function ExamplesMenu() {
                     className={shapeshifter(
                       'fixed left-3/4 top-1/2 overflow-visible w-[35px] animate-bounce group-hover:hidden',
                       {
-                        'hidden': option.title !== example,
+                        'hidden': option.title !== slide,
                       }
                     )}
                     src="/images/rpg_pointer.png"

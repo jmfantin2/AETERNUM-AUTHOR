@@ -11,7 +11,7 @@ import {
   useState,
   useEffect,
 } from 'react';
-import { useExample } from '@/contexts/ExampleContext';
+import { useSlide } from '@/contexts/SlideContext';
 import NavButton from './NavButton';
 import Step from './Step';
 
@@ -20,20 +20,20 @@ type PresentationProps = {
 };
 
 const Presentation: FC<PresentationProps> = ({ children }) => {
-  const { example, setExample } = useExample();
+  const { slide, setSlide } = useSlide();
   const steps = Children.toArray(children) as ReactElement[];
   const [current, setCurrent] = useState(0);
 
   useEffect(() => {
-    const index = steps.findIndex((step) => step.props.title === example);
+    const index = steps.findIndex((step) => step.props.title === slide);
     if (index !== -1) setCurrent(index);
-  }, [example, steps]);
+  }, [slide, steps]);
 
   const goNext = () => {
     if (current < steps.length - 1) {
       const next = current + 1;
       setCurrent(next);
-      setExample(steps[next].props.title);
+      setSlide(steps[next].props.title);
     }
   };
 
@@ -41,13 +41,13 @@ const Presentation: FC<PresentationProps> = ({ children }) => {
     if (current > 0) {
       const prev = current - 1;
       setCurrent(prev);
-      setExample(steps[prev].props.title);
+      setSlide(steps[prev].props.title);
     }
   };
 
   const goFirst = () => {
     setCurrent(0);
-    setExample(steps[0].props.title);
+    setSlide(steps[0].props.title);
   };
 
   return (
