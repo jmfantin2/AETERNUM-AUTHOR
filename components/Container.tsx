@@ -18,9 +18,4 @@ export function Container({ mode, children }: ContainerProps) {
         </main>
       );
   }
-  return (
-    <main className="flex bg-PAPER text-IRON dark:text-PAPER h-[100vh] px-4 dark:bg-IRON md:px-20 lg:px-40 items-center justify-center">
-      {children}
-    </main>
-  );
 }

@@ -1,5 +1,4 @@
-import { BsFillMoonStarsFill } from 'react-icons/bs';
-import { FaSun } from 'react-icons/fa';
+import { FaMoon, FaSun } from 'react-icons/fa';
 
 import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
@@ -17,11 +16,11 @@ export function ThemeSwitch() {
 
   if (resolvedTheme === 'dark') {
     return (
-      <BsFillMoonStarsFill
+      <FaMoon
         onClick={() => {
           setTheme('light');
         }}
-        className="text-CYAN cursor-pointer text-2xl hover:text-EMERALD transition-colors ease-in-out"
+        className="py-1 text-ROSE hover:text-ORANGE dark:text-CYAN dark:hover:text-EMERALD transition-colors ease-in-out ml-4 md:ml-8 cursor-pointer text-2xl"
       />
     );
   }
@@ -32,7 +31,7 @@ export function ThemeSwitch() {
         onClick={() => {
           setTheme('dark');
         }}
-        className="text-ROSE cursor-pointer text-3xl hover:text-ORANGE transition-colors ease-in-out"
+        className="text-ROSE hover:text-ORANGE dark:text-CYAN dark:hover:text-EMERALD transition-colors ease-in-out ml-4 md:ml-8 cursor-pointer text-2xl"
       />
     );
   }

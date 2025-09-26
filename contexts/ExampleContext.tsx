@@ -1,5 +1,6 @@
+//! Æternum Author
+//? @/contexts/ExamplesContext.tsx
 'use client';
-
 import { createContext, ReactNode, useContext } from 'react';
 import { useState } from 'react';
 

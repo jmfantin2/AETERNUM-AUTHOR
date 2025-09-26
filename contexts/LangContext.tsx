@@ -1,3 +1,5 @@
+//! Æternum Author
+//? @/contexts/LangContext.tsx
 'use client';
 
 import { createContext, ReactNode, useContext } from 'react';
@@ -20,7 +22,7 @@ type LangContextProviderProps = {
 };
 
 export function LangContextProvider({ children }: LangContextProviderProps) {
-  const initialLang = { iso: 'PT', n: 0 };
+  const initialLang = { iso: 'EN', n: 1 };
 
   const [lang, setLang] = useState(initialLang);
 

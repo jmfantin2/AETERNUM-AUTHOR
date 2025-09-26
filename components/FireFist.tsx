@@ -1,3 +1,5 @@
+//! Æternum Author
+//? @/components/FireFist.tsx
 import Image from 'next/image';
 import shapeshifter from 'classnames';
 

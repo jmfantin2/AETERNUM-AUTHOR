@@ -1,3 +1,5 @@
+//! Æternum Author
+//? @/lib/strings.ts
 'use client';
 import { useLang } from '@/contexts/LangContext';
 const _ = require('lodash');

@@ -1,3 +1,5 @@
+//! Æternum Author
+//? @/components/ExamplesMenu.tsx
 import TXT from '@/lib/strings';
 import { SpinningTriangle } from './SpinningTriangle';
 import { useState, useEffect } from 'react';
@@ -9,14 +11,11 @@ export function ExamplesMenu() {
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []); //only runs in the client = indicates it has mounted
   //! these are needed for server-side verification
-
   const { example, setExample } = useExample();
-
   const [isOpen, setIsOpen] = useState(false);
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
-
   return mounted ? (
     <>
       <a
@@ -65,7 +64,7 @@ export function ExamplesMenu() {
               >
                 <p
                   className={shapeshifter(
-                    'border-b-2  border-ROSE/40 dark:border-EMERALD/40 font-burtons text-xl',
+                    'border-b-2 border-ROSE/40 dark:border-EMERALD/40 font-burtons text-xl',
                     {
                       'bg-ORANGE/20 dark:bg-CYAN/20 hover:text-ROSE dark:hover:text-EMERALD hover:bg-whirl_light dark:hover:bg-whirl_dark cursor-pointer':
                         option.title !== example,
@@ -99,16 +98,8 @@ export function ExamplesMenu() {
 
 const options = [
   { id: 0, title: 'intro' },
-  { id: 1, title: 'this dropdown' },
-];
-
-const todo = [
-  { id: 0, title: 'intro' },
-  { id: 1, title: 'this dropdown' },
-  { id: 2, title: 'TRIANGULAR IMAGES' },
-  { id: 3, title: 'FLAME LOADER' },
-  { id: 4, title: 'THEME SWITCH' },
-  { id: 5, title: 'LANG SWITCH' },
-  { id: 6, title: 'MONSTER FLOPPY DISK' },
-  { id: 7, title: 'GRADIENT TEXTS' },
+  { id: 1, title: 'helplit' },
+  { id: 2, title: 'arte-das-milhas' },
+  { id: 3, title: 'pucrs' },
+  // Add more for other chapters
 ];
